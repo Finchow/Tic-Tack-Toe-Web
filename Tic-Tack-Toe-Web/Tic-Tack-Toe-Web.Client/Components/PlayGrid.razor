@@ -1,0 +1,22 @@
+﻿@using Tic_Tack_Toe_Web.Client.Classes
+
+<h3>PlayGrid</h3>
+
+<div class="grid">
+
+    @foreach (var row in Grid.Grid)
+    {
+        row.Value.Count();
+    }
+
+    
+</div>
+
+
+@code {
+    public GameGrid Grid = new(3, 3);
+
+    private void Test(){
+        
+    }
+}
