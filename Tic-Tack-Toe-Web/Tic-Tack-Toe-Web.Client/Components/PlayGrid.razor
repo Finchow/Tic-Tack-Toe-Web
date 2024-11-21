@@ -1,22 +1,31 @@
 ﻿@using Tic_Tack_Toe_Web.Client.Classes
 
-<h3>PlayGrid</h3>
-
-<div class="grid">
-
-    @foreach (var row in Grid.Grid)
-    {
-        row.Value.Count();
-    }
-
-    
+<div class="container align-items-center justify-content-center">
+    <div class="grid">
+        @for (int i = 0; i < Grid.Height; i++)
+        {
+            <div class="row">
+                @for (int j = 0; j < Grid.Width; j++)
+                {
+                    <button class="tile" @onclick="() => SetTileToX(Grid.Tiles[j])">
+                        @Grid.Tiles[j].Value
+                    </button>
+                }
+            </div>
+        }
+    </div>
 </div>
 
-
 @code {
-    public GameGrid Grid = new(3, 3);
 
-    private void Test(){
-        
+    [Parameter]
+    public Grid Grid { get; set; } = new(3, 3);
+
+    private int renderCounter;
+
+    private void SetTileToX(Tile tile) 
+    {
+        tile.Value = "X";
+        StateHasChanged();
     }
 }

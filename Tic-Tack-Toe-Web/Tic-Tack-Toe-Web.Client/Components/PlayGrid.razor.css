@@ -1,0 +1,14 @@
+﻿.grid {
+    display:flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-flow: column;
+    margin: 2vh;
+    background-color: #acbabf;
+}
+
+.tile {
+    width: 8vh;
+    height: 8vh;
+    margin: 1vh;
+}
